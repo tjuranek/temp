@@ -35,7 +35,7 @@ export default function Page() {
   return (
     <html lang="en">
       <head>
-        <meta charset="UTF-8" />
+        <meta />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Brokkr API Documentation</title>
 
@@ -46,18 +46,18 @@ export default function Page() {
       </head>
 
       <body>
-        <div class="container">
+        <div className="container">
           <input
             type="checkbox"
             id="sidebarToggle"
-            class="sidebar-toggle-checkbox"
+            className="sidebar-toggle-checkbox"
           />
-          <label for="sidebarToggle" class="sidebar-toggle">
+          <label for="sidebarToggle" className="sidebar-toggle">
             <span></span>
             <span></span>
             <span></span>
           </label>
-          <aside class="sidebar">
+          <aside className="sidebar">
             <nav>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -65,7 +65,7 @@ export default function Page() {
                 height="1em"
                 fill="currentColor"
                 viewBox="0 0 165 48"
-                class="logo"
+                className="logo"
               >
                 <g clip-path="url(#logo-mono_svg__a)">
                   <path
@@ -103,7 +103,7 @@ export default function Page() {
                 </defs>
               </svg>
 
-              <div class="nav-section">
+              <div className="nav-section">
                 <h2>Guides</h2>
 
                 <ul>
@@ -121,7 +121,7 @@ export default function Page() {
                 </ul>
               </div>
 
-              <div class="nav-section">
+              <div className="nav-section">
                 <h2>Resources</h2>
 
                 <ul>
@@ -171,6 +171,7 @@ export default function Page() {
                   <li>
                     <a href="#deployments">Deployments</a>
                     <ul>
+                      {/** @ts-ignore */}
                       <li href="#get-deployments">
                         <a href="#get-deployments">Get deployments</a>
                       </li>
@@ -251,7 +252,7 @@ export default function Page() {
             </nav>
           </aside>
 
-          <main class="content">
+          <main className="content">
             <section id="introduction">
               <h1>Brokkr API Documentation</h1>
               <p>
@@ -268,24 +269,24 @@ export default function Page() {
                 password to obtain an API token. Once you have the token, attach
                 it as a bearer token to the headers for subsequent requests.
               </p>
-              <div id="login" class="endpointDiv">
+              <div id="login" className="endpointDiv">
                 <h3>Login</h3>
                 <p>This endpoint will fetch an API token.</p>
-                <div class="data">
-                  <div class="header">Request</div>
-                  <div class="url">
-                    <span class="method">POST</span>
-                    <span class="path">/api/login</span>
+                <div className="data">
+                  <div className="header">Request</div>
+                  <div className="url">
+                    <span className="method">POST</span>
+                    <span className="path">/api/login</span>
                   </div>
-                  <code class="json">{loginRequest}</code>
+                  <code className="json">{loginRequest}</code>
                 </div>
-                <div class="data">
-                  <div class="header">Response</div>
-                  <div class="url">
-                    <span class="method">POST</span>
-                    <span class="path">/api/login</span>
+                <div className="data">
+                  <div className="header">Response</div>
+                  <div className="url">
+                    <span className="method">POST</span>
+                    <span className="path">/api/login</span>
                   </div>
-                  <code class="json">{loginResponse}</code>
+                  <code className="json">{loginResponse}</code>
                 </div>
               </div>
             </section>
@@ -293,7 +294,7 @@ export default function Page() {
             <section id="hypervisor">
               <h2>Hypervisor</h2>
               <p>These endpoints allow you to create a hypervisor device.</p>
-              <div id="create-hypervisor" class="endpointDiv">
+              <div id="create-hypervisor" className="endpointDiv">
                 <h3>Create Hypervisor</h3>
                 <p>
                   This endpoint allows you to create a Hypervisor device for
@@ -301,7 +302,7 @@ export default function Page() {
                   listed below that must be satisfied before creating your
                   Hypervisor device.
                 </p>
-                <div class="requirements">
+                <div className="requirements">
                   <h3>Requirements</h3>
                   <div>
                     <ul className="text-sm font-medium list-disc list-inside">
@@ -314,22 +315,22 @@ export default function Page() {
                     </ul>
                   </div>
                 </div>
-                <div class="data">
-                  <div class="header">Request</div>
-                  <div class="url">
-                    <span class="method">POST</span>
-                    <span class="path">/api/hypervisors</span>
+                <div className="data">
+                  <div className="header">Request</div>
+                  <div className="url">
+                    <span className="method">POST</span>
+                    <span className="path">/api/hypervisors</span>
                   </div>
-                  <code class="json">{createHypervisorRequest}</code>
+                  <code className="json">{createHypervisorRequest}</code>
                 </div>
-                <div class="data">
-                  <div class="header">Response</div>
+                <div className="data">
+                  <div className="header">Response</div>
 
-                  <div class="url">
-                    <span class="method">POST</span>
-                    <span class="path">/api/hypervisors</span>
+                  <div className="url">
+                    <span className="method">POST</span>
+                    <span className="path">/api/hypervisors</span>
                   </div>
-                  <code class="json">{createHypervisorResponse}</code>
+                  <code className="json">{createHypervisorResponse}</code>
                 </div>
               </div>
             </section>
@@ -339,12 +340,12 @@ export default function Page() {
                 These endpoints allow you to retrieve, update and provision
                 inventory.
               </p>
-              <div id="get-inventory" class="endpointDiv">
+              <div id="get-inventory" className="endpointDiv">
                 <h3>Get Inventory</h3>
                 <p>
                   This endpoint allows you to retrieve all inventory listings.
                 </p>
-                <div class="parameters">
+                <div className="parameters">
                   <h4>Optional Query Parameters</h4>
                   <div>
                     <div>
@@ -354,22 +355,22 @@ export default function Page() {
                     <small>Filter inventory by organization ID</small>
                   </div>
                 </div>
-                <div class="data">
-                  <div class="header">Response</div>
-                  <div class="url">
-                    <span class="method">GET</span>
-                    <span class="path">/api/dcim/inventory/baremetal</span>
+                <div className="data">
+                  <div className="header">Response</div>
+                  <div className="url">
+                    <span className="method">GET</span>
+                    <span className="path">/api/dcim/inventory/baremetal</span>
                   </div>
 
-                  <code class="json">{inventoryAllResponse}</code>
+                  <code className="json">{inventoryAllResponse}</code>
                 </div>
               </div>
-              <div id="get-inventory-by-id" class="endpointDiv">
+              <div id="get-inventory-by-id" className="endpointDiv">
                 <h3>Get Inventory by ID</h3>
                 <p>
                   This endpoint allows you to retrieve inventory listing by ID.
                 </p>
-                <div class="parameters">
+                <div className="parameters">
                   <h4>Required Path Parameters</h4>
                   <div>
                     <div>
@@ -379,19 +380,21 @@ export default function Page() {
                     <small>Retrieve inventory by ID</small>
                   </div>
                 </div>
-                <div class="data">
-                  <div class="header">Response</div>
-                  <div class="url">
-                    <span class="method">GET</span>
-                    <span class="path">/api/dcim/inventory/baremetal/:id</span>
+                <div className="data">
+                  <div className="header">Response</div>
+                  <div className="url">
+                    <span className="method">GET</span>
+                    <span className="path">
+                      /api/dcim/inventory/baremetal/:id
+                    </span>
                   </div>
-                  <code class="json">{inventoryResponse}</code>
+                  <code className="json">{inventoryResponse}</code>
                 </div>
               </div>
-              <div id="update-inventory-by-id" class="endpointDiv">
+              <div id="update-inventory-by-id" className="endpointDiv">
                 <h3>Update Inventory by ID</h3>
                 <p>This endpoint allows you to update an inventory listing.</p>
-                <div class="parameters">
+                <div className="parameters">
                   <h4>Required Path Parameters</h4>
                   <div>
                     <div>
@@ -401,34 +404,34 @@ export default function Page() {
                     <small>Update inventory by ID</small>
                   </div>
                 </div>
-                <div class="data">
-                  <div class="header">Request</div>
-                  <div class="url">
-                    <span class="method">PATCH</span>
-                    <span class="path">
+                <div className="data">
+                  <div className="header">Request</div>
+                  <div className="url">
+                    <span className="method">PATCH</span>
+                    <span className="path">
                       /api/dcim/inventory/baremetal/:id/listing
                     </span>
                   </div>
-                  <code class="json">{updateInventoryRequest}</code>
+                  <code className="json">{updateInventoryRequest}</code>
                 </div>
-                <div class="data">
-                  <div class="header">Response</div>
-                  <div class="url">
-                    <span class="method">PATCH</span>
-                    <span class="path">
+                <div className="data">
+                  <div className="header">Response</div>
+                  <div className="url">
+                    <span className="method">PATCH</span>
+                    <span className="path">
                       /api/dcim/inventory/baremetal/:id/listing
                     </span>
                   </div>
-                  <code class="json">{inventoryResponse}</code>
+                  <code className="json">{inventoryResponse}</code>
                 </div>
               </div>
-              <div id="update-nickname-by-id" class="endpointDiv">
+              <div id="update-nickname-by-id" className="endpointDiv">
                 <h3>Update Nickname by ID</h3>
                 <p>
                   This endpoint allows you to update an inventory listing's
                   nickname.
                 </p>
-                <div class="parameters">
+                <div className="parameters">
                   <h4>Required Path Parameters</h4>
                   <div>
                     <div>
@@ -438,35 +441,35 @@ export default function Page() {
                     <small>Update inventory nickname by ID</small>
                   </div>
                 </div>
-                <div class="data">
-                  <div class="header">Request</div>
-                  <div class="url">
-                    <span class="method">PATCH</span>
-                    <span class="path">
+                <div className="data">
+                  <div className="header">Request</div>
+                  <div className="url">
+                    <span className="method">PATCH</span>
+                    <span className="path">
                       /api/dcim/inventory/baremetal/:id/nickname
                     </span>
                   </div>
 
-                  <code class="json">{updateNicknameRequest}</code>
+                  <code className="json">{updateNicknameRequest}</code>
                 </div>
-                <div class="data">
-                  <div class="header">Response</div>
-                  <div class="url">
-                    <span class="method">PATCH</span>
-                    <span class="path">
+                <div className="data">
+                  <div className="header">Response</div>
+                  <div className="url">
+                    <span className="method">PATCH</span>
+                    <span className="path">
                       /api/dcim/inventory/baremetal/:id/nickname
                     </span>
                   </div>
-                  <code class="json">{inventoryResponse}</code>
+                  <code className="json">{inventoryResponse}</code>
                 </div>
               </div>
-              <div id="provision" class="endpointDiv">
+              <div id="provision" className="endpointDiv">
                 <h3>Provision</h3>
                 <p>
                   This endpoint allows you to provision a listing from your
                   organizations inventory.
                 </p>
-                <div class="parameters">
+                <div className="parameters">
                   <h4>Required Path Parameters</h4>
                   <div>
                     <div>
@@ -476,26 +479,26 @@ export default function Page() {
                     <small>Provision inventory by ID</small>
                   </div>
                 </div>
-                <div class="data">
-                  <div class="header">Request</div>
-                  <div class="url">
-                    <span class="method">PATCH</span>
-                    <span class="path">
+                <div className="data">
+                  <div className="header">Request</div>
+                  <div className="url">
+                    <span className="method">PATCH</span>
+                    <span className="path">
                       /api/dcim/inventory/baremetal/:id/provision
                     </span>
                   </div>
 
-                  <code class="json">{provisionRequest}</code>
+                  <code className="json">{provisionRequest}</code>
                 </div>
-                <div class="data">
-                  <div class="header">Response</div>
-                  <div class="url">
-                    <span class="method">PATCH</span>
-                    <span class="path">
+                <div className="data">
+                  <div className="header">Response</div>
+                  <div className="url">
+                    <span className="method">PATCH</span>
+                    <span className="path">
                       /api/dcim/inventory/baremetal/:id/provision
                     </span>
                   </div>
-                  <code class="json">{inventoryResponse}</code>
+                  <code className="json">{inventoryResponse}</code>
                 </div>
               </div>
             </section>
@@ -505,13 +508,13 @@ export default function Page() {
                 These endpoints allow you to create, delete and retrieve
                 storefront settings by an organization ID.
               </p>
-              <div id="get-storefront-by-id" class="endpointDiv">
+              <div id="get-storefront-by-id" className="endpointDiv">
                 <h3>Get Storefront by Organization ID</h3>
                 <p>
                   This endpoint allows you to retrieve storefront settings by an
                   organization ID.
                 </p>
-                <div class="parameters">
+                <div className="parameters">
                   <h4>Required Path Parameters</h4>
                   <div>
                     <div>
@@ -521,22 +524,24 @@ export default function Page() {
                     <small>Retrieve settings by organization ID</small>
                   </div>
                 </div>
-                <div class="data">
-                  <div class="header">Response</div>
-                  <div class="url">
-                    <span class="method">GET</span>
-                    <span class="path">/api/storefront/:organizationId</span>
+                <div className="data">
+                  <div className="header">Response</div>
+                  <div className="url">
+                    <span className="method">GET</span>
+                    <span className="path">
+                      /api/storefront/:organizationId
+                    </span>
                   </div>
-                  <code class="json">{storefrontResponse}</code>
+                  <code className="json">{storefrontResponse}</code>
                 </div>
               </div>
-              <div id="create-storefront" class="endpointDiv">
+              <div id="create-storefront" className="endpointDiv">
                 <h3>Create Storefront</h3>
                 <p>
                   This endpoint allows you to create a storefront for your
                   organization.
                 </p>
-                <div class="parameters">
+                <div className="parameters">
                   <h4>Required Path Parameters</h4>
                   <div>
                     <div>
@@ -546,30 +551,34 @@ export default function Page() {
                     <small>Create storefront with organization ID</small>
                   </div>
                 </div>
-                <div class="data">
-                  <div class="header">Request</div>
-                  <div class="url">
-                    <span class="method">POST</span>
-                    <span class="path">/api/storefront/:organizationId</span>
+                <div className="data">
+                  <div className="header">Request</div>
+                  <div className="url">
+                    <span className="method">POST</span>
+                    <span className="path">
+                      /api/storefront/:organizationId
+                    </span>
                   </div>
-                  <code class="json">{storefrontRequest}</code>
+                  <code className="json">{storefrontRequest}</code>
                 </div>
-                <div class="data">
-                  <div class="header">Response</div>
-                  <div class="url">
-                    <span class="method">POST</span>
-                    <span class="path">/api/storefront/:organizationId</span>
+                <div className="data">
+                  <div className="header">Response</div>
+                  <div className="url">
+                    <span className="method">POST</span>
+                    <span className="path">
+                      /api/storefront/:organizationId
+                    </span>
                   </div>
-                  <code class="json">{storefrontResponse}</code>
+                  <code className="json">{storefrontResponse}</code>
                 </div>
               </div>
-              <div id="delete-storefront" class="endpointDiv">
+              <div id="delete-storefront" className="endpointDiv">
                 <h3>Delete Storefront</h3>
                 <p>
                   This endpoint allows you to delete a storefront from your
                   organization.
                 </p>
-                <div class="parameters">
+                <div className="parameters">
                   <h4>Required Path Parameters</h4>
                   <div>
                     <div>
@@ -579,13 +588,15 @@ export default function Page() {
                     <small>Delete storefront with organization ID</small>
                   </div>
                 </div>
-                <div class="data">
-                  <div class="header">Response</div>
-                  <div class="url">
-                    <span class="method">DELETE</span>
-                    <span class="path">/api/storefront/:organizationId</span>
+                <div className="data">
+                  <div className="header">Response</div>
+                  <div className="url">
+                    <span className="method">DELETE</span>
+                    <span className="path">
+                      /api/storefront/:organizationId
+                    </span>
                   </div>
-                  <code class="json">{storefrontResponse}</code>
+                  <code className="json">{storefrontResponse}</code>
                 </div>
               </div>
             </section>
@@ -595,10 +606,10 @@ export default function Page() {
                 These endpoints allow you to retrieve, update and reprovision
                 deployments.
               </p>
-              <div id="get-deployments" class="endpointDiv">
+              <div id="get-deployments" className="endpointDiv">
                 <h3>Get Deployments</h3>
                 <p>This endpoint allows you to retrieve all deployments.</p>
-                <div class="parameters">
+                <div className="parameters">
                   <h4>Optional Query Parameters</h4>
                   <div>
                     <div>
@@ -608,20 +619,20 @@ export default function Page() {
                     <small>Filter deployments by organization ID</small>
                   </div>
                 </div>
-                <div class="data">
-                  <div class="header">Response</div>
-                  <div class="url">
-                    <span class="method">GET</span>
-                    <span class="path">/api/deployments</span>
+                <div className="data">
+                  <div className="header">Response</div>
+                  <div className="url">
+                    <span className="method">GET</span>
+                    <span className="path">/api/deployments</span>
                   </div>
 
-                  <code class="json">{deploymentAllResponse}</code>
+                  <code className="json">{deploymentAllResponse}</code>
                 </div>
               </div>
-              <div id="get-deployments-by-id" class="endpointDiv">
+              <div id="get-deployments-by-id" className="endpointDiv">
                 <h3>Get Deployment by ID</h3>
                 <p>This endpoint allows you to retrieve a deployment by ID.</p>
-                <div class="parameters">
+                <div className="parameters">
                   <h4>Required Path Parameters</h4>
                   <div>
                     <div>
@@ -631,19 +642,19 @@ export default function Page() {
                     <small>Retrieve deployment by ID</small>
                   </div>
                 </div>
-                <div class="data">
-                  <div class="header">Response</div>
-                  <div class="url">
-                    <span class="method">GET</span>
-                    <span class="path">/api/deployments/:id</span>
+                <div className="data">
+                  <div className="header">Response</div>
+                  <div className="url">
+                    <span className="method">GET</span>
+                    <span className="path">/api/deployments/:id</span>
                   </div>
-                  <code class="json">{deploymentResponse}</code>
+                  <code className="json">{deploymentResponse}</code>
                 </div>
               </div>
-              <div id="update-deployment" class="endpointDiv">
+              <div id="update-deployment" className="endpointDiv">
                 <h3>Update Deployment by ID</h3>
                 <p>This endpoint allows you to update a deployment.</p>
-                <div class="parameters">
+                <div className="parameters">
                   <h4>Required Path Parameters</h4>
                   <div>
                     <div>
@@ -653,27 +664,27 @@ export default function Page() {
                     <small>Update deployment by ID</small>
                   </div>
                 </div>
-                <div class="data">
-                  <div class="header">Request</div>
-                  <div class="url">
-                    <span class="method">PATCH</span>
-                    <span class="path">/api/deployment/:id</span>
+                <div className="data">
+                  <div className="header">Request</div>
+                  <div className="url">
+                    <span className="method">PATCH</span>
+                    <span className="path">/api/deployment/:id</span>
                   </div>
-                  <code class="json">{updateDeploymentRequest}</code>
+                  <code className="json">{updateDeploymentRequest}</code>
                 </div>
-                <div class="data">
-                  <div class="header">Response</div>
-                  <div class="url">
-                    <span class="method">PATCH</span>
-                    <span class="path">/api/deployment/:id</span>
+                <div className="data">
+                  <div className="header">Response</div>
+                  <div className="url">
+                    <span className="method">PATCH</span>
+                    <span className="path">/api/deployment/:id</span>
                   </div>
-                  <code class="json">{deploymentResponse}</code>
+                  <code className="json">{deploymentResponse}</code>
                 </div>
               </div>
-              <div id="reprovision" class="endpointDiv">
+              <div id="reprovision" className="endpointDiv">
                 <h3>Reprovision</h3>
                 <p>This endpoint allows you to reprovision a deployment.</p>
-                <div class="parameters">
+                <div className="parameters">
                   <h4>Required Path Parameters</h4>
                   <div>
                     <div>
@@ -683,28 +694,32 @@ export default function Page() {
                     <small>Reprovision Deployment by ID</small>
                   </div>
                 </div>
-                <div class="data">
-                  <div class="header">Request</div>
-                  <div class="url">
-                    <span class="method">PATCH</span>
-                    <span class="path">/api/deployments/:id/reprovision</span>
+                <div className="data">
+                  <div className="header">Request</div>
+                  <div className="url">
+                    <span className="method">PATCH</span>
+                    <span className="path">
+                      /api/deployments/:id/reprovision
+                    </span>
                   </div>
 
-                  <code class="json">{provisionRequest}</code>
+                  <code className="json">{provisionRequest}</code>
                 </div>
-                <div class="data">
-                  <div class="header">Response</div>
-                  <div class="url">
-                    <span class="method">PATCH</span>
-                    <span class="path">/api/deployments/:id/reprovision</span>
+                <div className="data">
+                  <div className="header">Response</div>
+                  <div className="url">
+                    <span className="method">PATCH</span>
+                    <span className="path">
+                      /api/deployments/:id/reprovision
+                    </span>
                   </div>
-                  <code class="json">{deploymentResponse}</code>
+                  <code className="json">{deploymentResponse}</code>
                 </div>
               </div>
-              <div id="delete-deployment" class="endpointDiv">
+              <div id="delete-deployment" className="endpointDiv">
                 <h3>Delete Deployment</h3>
                 <p>This endpoint allows you to delete a deployment.</p>
-                <div class="parameters">
+                <div className="parameters">
                   <h4>Required Path Parameters</h4>
                   <div>
                     <div>
@@ -714,13 +729,13 @@ export default function Page() {
                     <small>Reprovision Deployment by ID</small>
                   </div>
                 </div>
-                <div class="data">
-                  <div class="header">Response</div>
-                  <div class="url">
-                    <span class="method">DELETE</span>
-                    <span class="path">/api/deployments/:id</span>
+                <div className="data">
+                  <div className="header">Response</div>
+                  <div className="url">
+                    <span className="method">DELETE</span>
+                    <span className="path">/api/deployments/:id</span>
                   </div>
-                  <code class="json">{deploymentResponse}</code>
+                  <code className="json">{deploymentResponse}</code>
                 </div>
               </div>
             </section>
@@ -730,29 +745,29 @@ export default function Page() {
                 These endpoints allow you to retrieve the marketplace listings
                 and categories.
               </p>
-              <div id="get-categories" class="endpointDiv">
+              <div id="get-categories" className="endpointDiv">
                 <h3>Get categories</h3>
                 <p>
                   This endpoint allows you to retrieve all of the marketplace
                   categories.
                 </p>
-                <div class="data">
-                  <div class="header">Response</div>
+                <div className="data">
+                  <div className="header">Response</div>
 
-                  <div class="url">
-                    <span class="method">GET</span>
-                    <span class="path">/api/marketplace/categories</span>
+                  <div className="url">
+                    <span className="method">GET</span>
+                    <span className="path">/api/marketplace/categories</span>
                   </div>
-                  <code class="json">{categoriesResponse}</code>
+                  <code className="json">{categoriesResponse}</code>
                 </div>
               </div>
-              <div id="get-listing-by-id" class="endpointDiv">
+              <div id="get-listing-by-id" className="endpointDiv">
                 <h3>Get listing by ID</h3>
                 <p>
                   This endpoint allows you to retrieve a single marketplace
                   listing.
                 </p>
-                <div class="parameters">
+                <div className="parameters">
                   <h4>Required Path Parameters</h4>
                   <div>
                     <div>
@@ -762,22 +777,22 @@ export default function Page() {
                     <small>Retrieve device by ID</small>
                   </div>
                 </div>
-                <div class="data">
-                  <div class="header">Response</div>
-                  <div class="url">
-                    <span class="method">GET</span>
-                    <span class="path">/api/marketplace/listings/:id</span>
+                <div className="data">
+                  <div className="header">Response</div>
+                  <div className="url">
+                    <span className="method">GET</span>
+                    <span className="path">/api/marketplace/listings/:id</span>
                   </div>
-                  <code class="json">{listingResponse}</code>
+                  <code className="json">{listingResponse}</code>
                 </div>
               </div>
-              <div id="get-all-listings" class="endpointDiv">
+              <div id="get-all-listings" className="endpointDiv">
                 <h3>Get all listings</h3>
                 <p>
                   This endpoint allows you to retrieve all of the marketplace
                   listings in a category.
                 </p>
-                <div class="parameters">
+                <div className="parameters">
                   <h4>Required Query Parameters</h4>
                   <div>
                     <div>
@@ -790,7 +805,7 @@ export default function Page() {
                     <small>Filter by device category</small>
                   </div>
                 </div>
-                <div class="parameters">
+                <div className="parameters">
                   <h4>Optional Query Parameters</h4>
                   <div>
                     <div>
@@ -800,16 +815,16 @@ export default function Page() {
                     <small>Filter by device status</small>
                   </div>
                 </div>
-                <div class="data">
-                  <div class="header">Response</div>
-                  <div class="url">
-                    <span class="method">GET</span>
-                    <span class="path">/api/marketplace/listings</span>
+                <div className="data">
+                  <div className="header">Response</div>
+                  <div className="url">
+                    <span className="method">GET</span>
+                    <span className="path">/api/marketplace/listings</span>
                   </div>
-                  <code class="json">{listingAllResponse}</code>
+                  <code className="json">{listingAllResponse}</code>
                 </div>
               </div>
-              <div id="provision-marketplace" class="endpointDiv">
+              <div id="provision-marketplace" className="endpointDiv">
                 <h3>Provision</h3>
                 <p>
                   This endpoint allows you to provision a marketplace listing.
@@ -824,7 +839,7 @@ export default function Page() {
                   not yet supported. Please contact Hydra sales at
                   Sales@hydrahost.com for pre-order help.
                 </p>
-                <div class="parameters">
+                <div className="parameters">
                   <h4>Required Path Parameters</h4>
                   <div>
                     <div>
@@ -834,26 +849,26 @@ export default function Page() {
                     <small>Provision marketplace listing by ID</small>
                   </div>
                 </div>
-                <div class="data">
-                  <div class="header">Request</div>
-                  <div class="url">
-                    <span class="method">PATCH</span>
-                    <span class="path">
+                <div className="data">
+                  <div className="header">Request</div>
+                  <div className="url">
+                    <span className="method">PATCH</span>
+                    <span className="path">
                       /api/marketplace/listings/baremetal/:id/provision
                     </span>
                   </div>
 
-                  <code class="json">{marketplaceProvisionRequest}</code>
+                  <code className="json">{marketplaceProvisionRequest}</code>
                 </div>
-                <div class="data">
-                  <div class="header">Response</div>
-                  <div class="url">
-                    <span class="method">PATCH</span>
-                    <span class="path">
+                <div className="data">
+                  <div className="header">Response</div>
+                  <div className="url">
+                    <span className="method">PATCH</span>
+                    <span className="path">
                       /api/marketplace/listings/baremetal/:id/provision
                     </span>
                   </div>
-                  <code class="json">{inventoryResponse}</code>
+                  <code className="json">{inventoryResponse}</code>
                 </div>
               </div>
             </section>
@@ -863,13 +878,13 @@ export default function Page() {
                 These endpoints will allow you to retrieve data relating to your
                 organization.
               </p>
-              <div id="get-default-payment-method" class="endpointDiv">
+              <div id="get-default-payment-method" className="endpointDiv">
                 <h3>Get Default Payment Method</h3>
                 <p>
                   This endpoint will fetch your organizations default payment
                   method
                 </p>
-                <div class="parameters">
+                <div className="parameters">
                   <h4>Required Path Parameters</h4>
                   <div>
                     <div>
@@ -881,15 +896,17 @@ export default function Page() {
                     </small>
                   </div>
                 </div>
-                <div class="data">
-                  <div class="header">Response</div>
-                  <div class="url">
-                    <span class="method">GET</span>
-                    <span class="path">
+                <div className="data">
+                  <div className="header">Response</div>
+                  <div className="url">
+                    <span className="method">GET</span>
+                    <span className="path">
                       /api/organizations/:organizationId/default-payment-method
                     </span>
                   </div>
-                  <code class="json">{getDefaultPaymentMethodResponse}</code>
+                  <code className="json">
+                    {getDefaultPaymentMethodResponse}
+                  </code>
                 </div>
               </div>
             </section>
@@ -899,12 +916,12 @@ export default function Page() {
                 These endpoints allow you to retrieve, create and delete SSH
                 keys.
               </p>
-              <div id="get-key-by-id" class="endpointDiv">
+              <div id="get-key-by-id" className="endpointDiv">
                 <h3>Get key by ID</h3>
                 <p>
                   This endpoint allows you to retrieve a user's SSH key by ID.
                 </p>
-                <div class="parameters">
+                <div className="parameters">
                   <h4>Required Path Parameters</h4>
                   <div>
                     <div>
@@ -914,55 +931,55 @@ export default function Page() {
                     <small>Retrieve an SSH key by ID</small>
                   </div>
                 </div>
-                <div class="data">
-                  <div class="header">Response</div>
-                  <div class="url">
-                    <span class="method">GET</span>
-                    <span class="path">/api/sshkeys/:id</span>
+                <div className="data">
+                  <div className="header">Response</div>
+                  <div className="url">
+                    <span className="method">GET</span>
+                    <span className="path">/api/sshkeys/:id</span>
                   </div>
-                  <code class="json">{sshKeyResponse}</code>
+                  <code className="json">{sshKeyResponse}</code>
                 </div>
               </div>
-              <div id="get-all-keys" class="endpointDiv">
+              <div id="get-all-keys" className="endpointDiv">
                 <h3>Get all SSH keys</h3>
                 <p>
                   This endpoint allows you to retrieve all of a users SSH keys.
                 </p>
-                <div class="data">
-                  <div class="header">Response</div>
-                  <div class="url">
-                    <span class="method">GET</span>
-                    <span class="path">/api/sshkeys</span>
+                <div className="data">
+                  <div className="header">Response</div>
+                  <div className="url">
+                    <span className="method">GET</span>
+                    <span className="path">/api/sshkeys</span>
                   </div>
-                  <code class="json">{sshKeyAllResponse}</code>
+                  <code className="json">{sshKeyAllResponse}</code>
                 </div>
               </div>
-              <div id="create-key" class="endpointDiv">
+              <div id="create-key" className="endpointDiv">
                 <h3>Create SSH key</h3>
                 <p>This endpoint allows you to add an SSH key to a user.</p>
-                <div class="data">
-                  <div class="header">Request</div>
-                  <div class="url">
-                    <span class="method">POST</span>
-                    <span class="path">/api/sshkeys/create</span>
+                <div className="data">
+                  <div className="header">Request</div>
+                  <div className="url">
+                    <span className="method">POST</span>
+                    <span className="path">/api/sshkeys/create</span>
                   </div>
-                  <code class="json">{sshKeyCreateRequest}</code>
+                  <code className="json">{sshKeyCreateRequest}</code>
                 </div>
-                <div class="data">
-                  <div class="header">Response</div>
-                  <div class="url">
-                    <span class="method">POST</span>
-                    <span class="path">/api/sshkeys/create</span>
+                <div className="data">
+                  <div className="header">Response</div>
+                  <div className="url">
+                    <span className="method">POST</span>
+                    <span className="path">/api/sshkeys/create</span>
                   </div>
-                  <code class="json">{sshKeyResponse}</code>
+                  <code className="json">{sshKeyResponse}</code>
                 </div>
               </div>
-              <div id="delete-key" class="endpointDiv">
+              <div id="delete-key" className="endpointDiv">
                 <h3>Delete SSH key</h3>
                 <p>
                   This endpoint allows you to delete an SSH key from a user.
                 </p>
-                <div class="parameters">
+                <div className="parameters">
                   <h4>Required Path Parameters</h4>
                   <div>
                     <div>
@@ -972,13 +989,13 @@ export default function Page() {
                     <small>Delete an SSH key by ID</small>
                   </div>
                 </div>
-                <div class="data">
-                  <div class="header">Response</div>
-                  <div class="url">
-                    <span class="method">DELETE</span>
-                    <span class="path">/api/sshkeys/:id</span>
+                <div className="data">
+                  <div className="header">Response</div>
+                  <div className="url">
+                    <span className="method">DELETE</span>
+                    <span className="path">/api/sshkeys/:id</span>
                   </div>
-                  <code class="json">{sshKeyDeleteResponse}</code>
+                  <code className="json">{sshKeyDeleteResponse}</code>
                 </div>
               </div>
             </section>
@@ -988,38 +1005,38 @@ export default function Page() {
                 These endpoints will allow you to retrieve and modify your user
                 record.
               </p>
-              <div id="get-user" class="endpointDiv">
+              <div id="get-user" className="endpointDiv">
                 <h3>Get User</h3>
                 <p>This endpoint will fetch your user record.</p>
-                <div class="data">
-                  <div class="header">Response</div>
-                  <div class="url">
-                    <span class="method">GET</span>
-                    <span class="path">/api/user</span>
+                <div className="data">
+                  <div className="header">Response</div>
+                  <div className="url">
+                    <span className="method">GET</span>
+                    <span className="path">/api/user</span>
                   </div>
-                  <code class="json">{userResponse}</code>
+                  <code className="json">{userResponse}</code>
                 </div>
               </div>
-              <div id="update-user" class="endpointDiv">
+              <div id="update-user" className="endpointDiv">
                 <h3>Update User</h3>
                 <p>
                   This endpoint allows you to update your name and/or email.
                 </p>
-                <div class="data">
-                  <div class="header">Request</div>
-                  <div class="url">
-                    <span class="method">PATCH</span>
-                    <span class="path">/api/user</span>
+                <div className="data">
+                  <div className="header">Request</div>
+                  <div className="url">
+                    <span className="method">PATCH</span>
+                    <span className="path">/api/user</span>
                   </div>
-                  <code class="json">{updateUserRequest}</code>
+                  <code className="json">{updateUserRequest}</code>
                 </div>
-                <div class="data">
-                  <div class="header">Response</div>
-                  <div class="url">
-                    <span class="method">PATCH</span>
-                    <span class="path">/api/user</span>
+                <div className="data">
+                  <div className="header">Response</div>
+                  <div className="url">
+                    <span className="method">PATCH</span>
+                    <span className="path">/api/user</span>
                   </div>
-                  <code class="json">{userResponse}</code>
+                  <code className="json">{userResponse}</code>
                 </div>
               </div>
             </section>
